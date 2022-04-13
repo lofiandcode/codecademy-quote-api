@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "npm:Express@^3.0.1"
+    "express": "^4.17.3"
   }
 }
