@@ -33,3 +33,15 @@ app.get('/api/quotes', (req, res, next) => {
         res.send(quotes);
     }
 })
+
+app.post('/api/quotes', (req, res, next) => {
+    const query = req.query;
+    const hasQuote = query.hasOwnProperty('quote');
+    const hasPerson = query.hasOwnProperty('person');
+    if (hasQuote && hasPerson && Object.keys(query).length === 2) {
+        quotes.push(query);
+        res.send(query);
+    } else {
+        res.status(400).send();
+    }
+})
